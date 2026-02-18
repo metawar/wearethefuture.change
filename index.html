@@ -5,40 +5,156 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Future Is Ours — Call to Action</title>
   <meta name="description" content="A one-page call to action: AI job displacement needs human-first rules. Contact your MP today." />
+
   <style>
     :root { --bg:#0b0f17; --card:#121a27; --text:#e8eefc; --muted:#a9b4cc; --accent:#6cf; --accent2:#f66; }
+
     body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; background:var(--bg); color:var(--text); }
     .wrap { max-width: 920px; margin: 0 auto; padding: 28px 18px 60px; }
     header { padding: 26px 0 8px; }
     h1 { font-size: 40px; margin: 0 0 10px; letter-spacing: -0.5px; }
     p { color: var(--muted); line-height: 1.55; margin: 0 0 12px; }
-    .hero { background: linear-gradient(135deg, rgba(102,204,255,.18), rgba(255,102,102,.12)); border: 1px solid rgba(255,255,255,.08);
-            border-radius: 16px; padding: 22px; }
+
+    .hero {
+      background: linear-gradient(135deg, rgba(102,204,255,.18), rgba(255,102,102,.12));
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 16px;
+      padding: 22px;
+    }
+
     .btns { display:flex; gap:12px; flex-wrap: wrap; margin-top: 14px; }
-    a.btn { text-decoration:none; color: var(--text); background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12);
-            padding: 10px 14px; border-radius: 12px; font-weight: 600; }
+    a.btn {
+      text-decoration:none; color: var(--text);
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+      padding: 10px 14px; border-radius: 12px; font-weight: 600;
+      display:inline-flex; align-items:center; gap:10px;
+    }
     a.btn.primary { background: rgba(102,204,255,.16); border-color: rgba(102,204,255,.4); }
     a.btn.danger { background: rgba(255,102,102,.14); border-color: rgba(255,102,102,.35); }
+
     .grid { display:grid; gap: 14px; grid-template-columns: 1fr; margin-top: 14px; }
     @media (min-width: 820px) { .grid { grid-template-columns: 1fr 1fr; } }
+
     .card { background: var(--card); border: 1px solid rgba(255,255,255,.08); border-radius: 16px; padding: 18px; }
     h2 { margin: 0 0 10px; font-size: 18px; letter-spacing: -0.2px; }
     ul { margin: 8px 0 0 18px; color: var(--muted); }
     li { margin: 6px 0; }
-    textarea, input { width:100%; box-sizing:border-box; border-radius: 12px; border: 1px solid rgba(255,255,255,.12);
-                      background: rgba(255,255,255,.04); color: var(--text); padding: 12px; }
+
+    textarea, input {
+      width:100%; box-sizing:border-box; border-radius: 12px; border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04); color: var(--text); padding: 12px;
+    }
     textarea { min-height: 220px; resize: vertical; }
+
     .small { font-size: 13px; color: var(--muted); }
     footer { margin-top: 22px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,.08); }
     code { color: var(--text); background: rgba(255,255,255,.06); padding: 2px 6px; border-radius: 8px; }
+
+    /* === MERGED IN: Blog styles (kept compatible with your existing palette) === */
+    .blog-hero {
+      margin-top:14px;
+      background: linear-gradient(135deg, rgba(102,204,255,.14), rgba(108,255,255,.06));
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 16px;
+      padding: 18px;
+    }
+    .kicker {
+      display:inline-flex; align-items:center; gap:10px;
+      font-size:12px; color: var(--muted);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:999px; padding:6px 10px;
+      background: rgba(255,255,255,.03);
+      margin-bottom:12px;
+    }
+    .dot {
+      width:8px; height:8px; border-radius:50%;
+      background: rgba(102,204,255,.9);
+      box-shadow: 0 0 0 4px rgba(102,204,255,.12);
+    }
+    .blog-title {
+      margin: 0 0 10px;
+      font-size: 26px;
+      letter-spacing: -0.3px;
+      color: var(--text);
+      line-height: 1.2;
+    }
+    .pull {
+      margin: 14px 0;
+      padding: 14px 14px;
+      border-left: 3px solid rgba(102,204,255,.85);
+      background: rgba(102,204,255,.08);
+      border-radius: 12px;
+      color: var(--text);
+    }
+    .two-col{
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap:14px;
+      align-items:start;
+      margin-top: 12px;
+    }
+    @media (max-width: 860px){ .two-col{grid-template-columns:1fr} }
+
+    figure {
+      margin:0;
+      border:1px solid rgba(255,255,255,.10);
+      border-radius: 16px;
+      overflow:hidden;
+      background: rgba(255,255,255,.03);
+    }
+    .img-ph{
+      aspect-ratio: 16 / 9;
+      display:grid; place-items:center;
+      text-align:center;
+      padding:16px;
+      color: rgba(232,238,252,.82);
+      background:
+        radial-gradient(600px 300px at 20% 30%, rgba(102,204,255,.18), transparent 55%),
+        radial-gradient(500px 350px at 80% 20%, rgba(255,102,102,.12), transparent 55%),
+        linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+    }
+    figcaption{
+      padding:10px 12px;
+      font-size:12px;
+      color: var(--muted);
+      border-top:1px solid rgba(255,255,255,.10);
+    }
+    .cta {
+      margin-top:14px;
+      border:1px solid rgba(102,204,255,.22);
+      background: rgba(102,204,255,.06);
+      border-radius: 16px;
+      padding:14px;
+    }
+    .cta h3{ margin:0 0 8px; font-size:16px; color: var(--text); }
+    .tag{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+    }
+    .inline {
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
+      padding:2px 6px;
+      border-radius:8px;
+      font-size: 12px;
+      color: var(--text);
+      white-space: nowrap;
+    }
   </style>
 </head>
+
 <body>
   <div class="wrap">
     <header class="hero">
       <h1>Future Is Ours</h1>
       <p><strong>AI is replacing people faster than society is preparing for.</strong> If we don’t act now, job loss becomes normal, and millions will join the precariat.</p>
       <div class="btns">
+	<a class="btn" href="#blog">Read the blog</a>
         <a class="btn primary" href="#act">Contact your MP today</a>
         <a class="btn" href="#video">Watch the video</a>
         <a class="btn danger" href="#join">Join the coalition</a>
@@ -46,25 +162,65 @@
       <p class="small">Pro-people. Pro-stability. Pro-future.</p>
     </header>
 
-    <section class="grid">
-      <div class="card">
-        <h2>Why this matters</h2>
-        <ul>
-          <li>Automation isn’t “efficiency” if it destroys livelihoods.</li>
-          <li>“Cheaper goods” means nothing if people can’t earn.</li>
-          <li>Policy is lagging years behind deployment.</li>
-          <li>This hits the middle and working class first, and hardest.</li>
-          <li>Without safeguards, we trade human dignity for shareholder margins.</li>
-        </ul>
+    <!-- === MERGED IN: Blog section (450–500-ish words) === -->
+    <section id="blog" class="card" style="margin-top:14px;">
+      <div class="blog-hero">
+        <span class="kicker"><span class="dot" aria-hidden="true"></span> Blog • AI, work, and social change (UK)</span>
+        <h2 class="blog-title">The Future of Work Is Being Decided — Without You</h2>
+       
       </div>
 
-      <div class="card">
-        <h2>What we’re calling for</h2>
-        <ul>
-          <li><strong>Transparency:</strong> disclose AI job replacement + publish impact numbers.</li>
-          <li><strong>Fair transition:</strong> training linked to real jobs + wage protection.</li>
-          <li><strong>Human-first rules:</strong> limits in critical services + accountability for harm.</li>
-        </ul>
+      <div class="two-col">
+        <div>
+          <p>For generations, we were sold a simple promise: study, work hard, and you can build a stable life. That social contract gave people dignity, routines, and the confidence to start families, buy homes, and plan for the future.</p>
+
+          <p>Now it’s being rewritten in silence.</p>
+
+          <p>AI and automation are spreading faster than regulation, faster than public debate, and faster than most workers can realistically retrain. It’s not just factory lines anymore. It’s customer service, admin, retail, design, translation, teaching support, and even software development. Roles that required real human judgement are being swapped for systems built to cut costs.</p>
+
+          <div class="pull">
+            We are told this will lower costs. Increase efficiency. Make life cheaper.
+
+            <br><br><strong>But cheaper for who?</strong>
+          </div>
+
+          <p>An economy can’t survive on productivity alone. If wages fall and stable jobs vanish, purchasing power collapses, local businesses suffer, and communities hollow out. The winners are the few who own the systems. The losers are everyone who relies on wages, which is most of the country.</p>
+
+          <p>This is why the conversation needs reframing. The dominant story says: “AI progress is inevitable, so adapt.” That shifts all risk onto individuals. A human-first approach says: <strong>innovation must come with rules</strong>, transparency when jobs are replaced, transition support tied to real vacancies, and accountability when automated systems cause harm.</p>
+
+          <p>None of this is anti-technology. AI can improve healthcare, reduce repetitive work, and support accessibility. The issue is deployment without safeguards, where decisions are made in boardrooms while the public is expected to accept the fallout.</p>
+
+          <p>If we don’t act early, “temporary disruption” becomes a permanent underclass. Long-term social change, and not the good kind.</p>
+
+          <p><strong>Your next step is simple:</strong> watch and share the video, then contact your MP using the script on this page. If enough constituents raise it, it stops being a tech trend and becomes a political issue.</p>
+
+          <p><strong>The future is ours — but only if we choose to shape it.</strong></p>
+        </div>
+
+        <aside>
+          <figure>
+  		<img src="assets/img1.png"" alt="UK High Street at dusk with closed shutters and subtle automation imagery" style="width:100%; height:auto; display:block;">
+  		
+	  </figure>
+
+	  <figure style="margin-top:14px;">
+  		<img src="assets/img2.png" alt="Three diverse faces in documentary close-up with subtle scanlines, emotional expressions" style="width:100%; height:auto; display:block; ratio:21/9; object-fit:cover;">
+ 
+	</figure>
+
+
+          <div class="cta">
+            <h3>Do the two-step</h3>
+            <p class="small" style="margin:0 0 10px;">
+              1) Share the video • 2) Contact your MP.<br>
+              Link to include: <span class="inline">wearethefuture.change</span>
+            </p>
+            <div class="btns">
+              <a class="btn primary" href="#video">Watch + Share</a>
+              <a class="btn" href="#act">Contact your MP</a>
+            </div>
+          </div>
+        </aside>
       </div>
     </section>
 
@@ -104,22 +260,24 @@ Kind regards,
     </section>
 
     <section id="video" class="card" style="margin-top:14px;">
+      <h2>Watch the call to action video</h2>
       <div style="max-width: 800px; margin: 0 auto 20px;">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/fjckhDP9SGc?si=RPa_8nAtSY3NkvG4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-  
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/fjckhDP9SGc?si=RPa_8nAtSY3NkvG4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+
       <p><a class="btn" href="https://youtu.be/fjckhDP9SGc" target="_blank" rel="noreferrer">Watch on YouTube</a></p>
 
-<p> Every share increases pressure. Every conversation increases visibility.</p>
-<p>Silence benefits no one except those already insulated from the consequences. </p>
+      <p>Every share increases pressure. Every conversation increases visibility.</p>
+      <p>Silence benefits no one except those already insulated from the consequences.</p>
+      <p class="small">If you share it, add: “Then contact your MP here: <span class="inline">wearethefuture.change</span>”.</p>
     </section>
 
-
+    
 
     <section id="join" class="card" style="margin-top:14px;">
       <h2>Join the coalition</h2>
       <p>Get updates, scripts, and next actions as we build pressure for human-first rules.</p>
-      
+
       <p><a class="btn danger" href="YOUR_SIGNUP_LINK_HERE" target="_blank" rel="noreferrer">Join (email list)</a></p>
       <p class="small">Contact: <code>hello@wearethefuture.change</code> </p>
     </section>
